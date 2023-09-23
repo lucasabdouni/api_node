@@ -1,12 +1,4 @@
-import {
-  expect,
-  beforeAll,
-  afterAll,
-  describe,
-  it,
-  beforeEach,
-  afterEach,
-} from 'vitest'
+import { expect, beforeAll, afterAll, describe, it, beforeEach } from 'vitest'
 import { execSync } from 'node:child_process'
 import request from 'supertest'
 import { app } from '../src/app'
@@ -59,7 +51,7 @@ describe('Transactions routes', () => {
     ])
   })
 
-  it('should be able to get the transactions', async () => {
+  it('should be able to get a specific transaction', async () => {
     const createTransactionResponse = await request(app.server)
       .post('/transactions')
       .send({
